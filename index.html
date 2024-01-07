@@ -14,8 +14,6 @@
     <button id="button5" onclick="toggleKelime(this)">?</button>
     <button id="button6" onclick="toggleKelime(this)">?</button>
     <button id="button7" onclick="toggleKelime(this)">?</button>
-    <button id="button8" onclick="toggleKelime(this)">?</button>
-    <button id="button9" onclick="toggleKelime(this)">?</button>
   </div>
   <button id="zamanlayici" onclick="startTimer()">Zamanlayıcı Başlat</button>
   <div id="timer">Kalan süre: </div>
@@ -28,9 +26,9 @@
     function randomKelimeButonlar() {
       kelimeButonlar = [];
 
-      // 6 adet rastgele butonu kelimeButonlar dizisine ekle
-      while (kelimeButonlar.length < 6) {
-        const randomIndex = Math.floor(Math.random() * 9) + 1;
+      // 5 adet rastgele butonu kelimeButonlar dizisine ekle
+      while (kelimeButonlar.length < 5) {
+        const randomIndex = Math.floor(Math.random() * 7) + 1;
         if (!kelimeButonlar.includes(randomIndex)) {
           kelimeButonlar.push(randomIndex);
         }
@@ -46,8 +44,8 @@
     }
 
     function randomBosButonlar() {
-      // 3 adet butona "?" içeriğini ekle
-      for (let i = 1; i <= 9; i++) {
+      // 2 adet butona "?" içeriğini ekle
+      for (let i = 1; i <= 7; i++) {
         if (!kelimeButonlar.includes(i)) {
           document.getElementById(`button${i}`).textContent = '?';
         }
@@ -71,7 +69,7 @@
     }
 
     function init() {
-      // Rastgele 6 butonda kelime ve 3 butonda boş kelime seçmek için sayfa yüklendiğinde çalıştır
+      // Rastgele 5 butonda kelime ve 2 butonda boş kelime seçmek için sayfa yüklendiğinde çalıştır
       randomKelimeButonlar();
       randomKelime();
       randomBosButonlar();
